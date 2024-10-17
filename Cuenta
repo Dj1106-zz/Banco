@@ -1,0 +1,31 @@
+package Ejercicio1;
+
+public abstract class Cuenta {
+	
+	protected int numeroCuenta;
+	protected String titular;
+	protected long saldo;
+	public Cuenta(int numeroCuenta, String titular, long saldo) {
+		super();
+		this.numeroCuenta = numeroCuenta;
+		this.titular = titular;
+		this.saldo = saldo;
+	}
+		
+	 public void depositar(long valor) {
+	        if (valor > 0) {
+	            this.saldo += valor;
+	            System.out.println("Depósito de " + valor + " realizado en la cuenta " + numeroCuenta);
+	        }
+	    }
+	 
+	 public abstract void retirar(long valor);
+	 
+	 @Override
+	    public String toString() {
+	        return "Cuenta #" + numeroCuenta + " - Titular: " + titular + " - Saldo: " + saldo;
+	    }
+	}
+
+	
+}
