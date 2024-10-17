@@ -1,0 +1,23 @@
+package Ejercicio1;
+
+public class Corriente extends Cuenta {
+		
+	private long sobreGiro;
+
+	public Corriente(int numeroCuenta, String titular, long saldo, long sobreGiro) {
+		super(numeroCuenta, titular, saldo);
+		this.sobreGiro = sobreGiro;
+	}
+	
+	@Override
+    public void retirar(long valor) {
+        if (valor > 0 && (saldo + sobreGiro) >= valor) {
+            saldo -= valor;
+            System.out.println("Retiro de " + valor + " realizado en la cuenta corriente " + numeroCuenta);
+        } else {
+            System.out.println("Fondos insuficientes, incluso con sobregiro.");
+        }
+    }
+	
+	
+}
