@@ -1,0 +1,25 @@
+package Ejercicio1;
+
+public class Ahorros extends Cuenta {
+
+	private long interes;
+
+	public Ahorros(int numeroCuenta, String titular, long saldo, long interes) {
+		super(numeroCuenta, titular, saldo);
+		this.interes = interes;
+	}
+	
+	@Override
+    public void retirar(long valor) {
+	} {
+        String valor;
+		if (valor > 0 && saldo >= valor) {
+            saldo -= valor;
+            System.out.println("Retiro de " + valor + " realizado en la cuenta de ahorro " + numeroCuenta);
+        } else 
+        {
+            System.out.println("Saldo insuficiente para realizar el retiro.");
+        }
+    }
+
+}
